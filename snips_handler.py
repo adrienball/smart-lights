@@ -31,9 +31,9 @@ def on_message(client, userdata, msg):
     payload = json.loads(msg.payload)
     model_id = payload["modelId"]
     if model_id in HOTWORDS_ON:
-        subprocess.call(["/home/pi/lights_commands/chacon_send", "1", "12325261", "1", "on"])
+        subprocess.call(["/home/pi/lights_commands/chacon_send", "2", "12325261", "1", "on"])
     elif model_id in HOTWORDS_OFF:
-        subprocess.call(["/home/pi/lights_commands/chacon_send", "1", "12325261", "1", "off"])
+        subprocess.call(["/home/pi/lights_commands/chacon_send", "2", "12325261", "1", "off"])
     else:
         print("Unmapped hotword model_id: %s" % model_id)
 
